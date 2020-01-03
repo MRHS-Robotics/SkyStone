@@ -78,6 +78,24 @@ public class BE2019_TeleOp extends OpMode
             robot.rightBack.setPower(-1 * power);
         }
 
+        // Linear Slide Motor //
+        if (gamepad1.dpad_up){
+            robot.armSlide.setPower(0.5*power);
+        }else if(gamepad1.dpad_down){
+            robot.armSlide.setPower(-0.5*power);
+        }
+        else {
+            robot.armSlide.setPower(0);
+        }
+
+
+        /// Intake Motor ///
+        if (gamepad1.right_trigger > 0) {
+            robot.intake.setPower(gamepad1.right_trigger);
+        }
+        else {
+            robot.intake.setPower(-gamepad1.left_trigger);
+        }
 
 
         // All For Telemetry //
