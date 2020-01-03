@@ -66,23 +66,26 @@ public class BE2019_TeleOp extends OpMode
 
         // Spinning
         if (gamepad1.left_bumper){
-            robot.leftFront.setPower(-1 * power);
-            robot.rightFront.setPower(1* power);
-            robot.leftBack.setPower(-1 * power);
-            robot.rightBack.setPower(1 * power);
-        }
-        else if (gamepad1.right_bumper){
+            //Britta -1, 1, -1, 1
             robot.leftFront.setPower(1 * power);
             robot.rightFront.setPower(-1* power);
             robot.leftBack.setPower(1 * power);
             robot.rightBack.setPower(-1 * power);
         }
+        else if (gamepad1.right_bumper){
+            //Britta 1,-1,1,-1
+            robot.leftFront.setPower(-1 * power);
+            robot.rightFront.setPower(1* power);
+            robot.leftBack.setPower(-1 * power);
+            robot.rightBack.setPower(1 * power);
+        }
 
         // Linear Slide Motor //
+        //Britta if (up){}else if(down){}
         if (gamepad1.dpad_up){
-            robot.armSlide.setPower(0.5*power);
-        }else if(gamepad1.dpad_down){
             robot.armSlide.setPower(-0.5*power);
+        }else if(gamepad1.dpad_down){
+            robot.armSlide.setPower(0.5*power);
         }
         else {
             robot.armSlide.setPower(0);
