@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class BE2019_TeleOp extends OpMode
 {
     private double power = 1;
-    private double direction = 1;
+    private double direction = -1;
     private double lowPower = 0.25;
     private double highPower = 1;
     private boolean xButtonHeld = false;
@@ -19,7 +19,6 @@ public class BE2019_TeleOp extends OpMode
     public void init() {
         telemetry.addData("Status", "BE2019 TeleOp Initialized");
         robot.init(hardwareMap);
-
     }
 
     public void loop() {
@@ -45,7 +44,10 @@ public class BE2019_TeleOp extends OpMode
             xButtonHeld = false;
         }
 
+
         // Direction Change
+
+      /*
         if (gamepad1.y) {
             if (!yButtonHeld) {
                 direction *= -1;
@@ -56,6 +58,8 @@ public class BE2019_TeleOp extends OpMode
             yButtonHeld = false;
         }
 
+
+       */
 
 
         // Driving Power
@@ -94,10 +98,11 @@ public class BE2019_TeleOp extends OpMode
 
         /// Intake Motor ///
         if (gamepad1.right_trigger > 0) {
-            robot.intake.setPower(gamepad1.right_trigger);
+            robot.intake.setPower(gamepad1.right_trigger*0.5);
+
         }
         else {
-            robot.intake.setPower(-gamepad1.left_trigger);
+            robot.intake.setPower(-gamepad1.left_trigger*0.5);
         }
 
 
@@ -119,3 +124,4 @@ public class BE2019_TeleOp extends OpMode
     public void stop() {
     }*/
 }
+
